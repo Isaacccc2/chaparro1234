@@ -1,0 +1,135 @@
+/* ===== Variables y base ===== */
+:root{
+  --header-h: 64px;          /* ajusta si tu barra es más alta/baja (56–72px) */
+  --brand: #e0664f;
+  --bg-dark: #0f0f10;
+  --text: #1f1f1f;
+}
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+body{
+  margin:0; color:var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height:1.5;
+}
+.no-scroll{ overflow:hidden; }
+
+/* ===== Header ===== */
+.header{
+  position: sticky; top:0; z-index:1000;
+  height: var(--header-h);
+  background: var(--bg-dark);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.header-inner{
+  height:100%; max-width:1100px; margin:0 auto; padding:0 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.logo{ display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none; }
+.logo-img{ width:36px; height:36px; object-fit:contain; border-radius:6px; }
+.logo-text{ font-weight:700; letter-spacing:.5px; font-size:14px; color:#fff; }
+
+.menu-btn{
+  border:0; border-radius:999px; padding:10px 16px;
+  background: var(--brand); color:#fff; font-weight:700; cursor:pointer;
+}
+
+/* ===== Menú móvil ===== */
+.menu{
+  position: fixed;
+  inset: var(--header-h) 0 auto 0;
+  background:#121214;
+  transform: translateY(-8px);
+  opacity:0; pointer-events:none;
+  transition:.25s ease; z-index:999;
+  padding:12px 16px 24px;
+}
+.menu[aria-hidden="false"]{ transform: translateY(0); opacity:1; pointer-events:auto; }
+.menu ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.menu a{ display:block; padding:12px 10px; border-radius:10px; color:#fff; text-decoration:none; }
+.menu a:hover, .menu a[aria-current="page"]{ background: rgba(255,255,255,.08); }
+
+/* ===== Menú escritorio ===== */
+@media (min-width: 900px){
+  .menu{ position: static; inset:auto; background:transparent; transform:none; opacity:1; pointer-events:auto; padding:0; }
+  .menu ul{ display:flex; gap:6px; }
+  .menu a{ padding:10px 12px; }
+  .menu-btn{ display:none; }
+}
+
+/* ===== HERO (fix pantalla negra móvil) ===== */
+.hero{
+  position: relative;
+  height:auto !important;                                 /* por si hay height:100vh */
+  min-height: calc(100svh - var(--header-h));             /* pantalla útil real */
+  display:grid; place-items:center;
+  padding: 24px 16px;
+  background: #0f0f10 var(--hero-img) center/cover no-repeat; /* cambia la imagen en el <style> del HTML */
+  box-sizing: border-box;
+}
+@supports not (height: 100svh){
+  .hero{ min-height: calc(var(--vh, 1vh) * 100 - var(--header-h)); } /* fallback */
+}
+.hero-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,.45));
+  pointer-events:none; z-index:1;
+}
+.hero-content{
+  position:relative; z-index:2; text-align:center; color:#fff; max-width:800px;
+}
+.hero-content h1{ margin:0 0 10px; font-size: clamp(28px, 6vw, 48px); line-height:1.1; }
+.hero-content p{ margin:0; font-size: clamp(16px, 3.8vw, 20px); opacity:.95; }
+
+/* ===== Main ===== */
+.main{ max-width:1100px; margin: 32px auto; padding: 0 16px; }
+
+.grid{ display:grid; gap:16px; grid-template-columns: 1fr; }
+@media(min-width:700px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+@media(min-width:1000px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
+
+.card{
+  background:#fff; border:1px solid #eee; border-radius:14px; padding:16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.04);
+}
+.card h3{ margin:0 0 6px; font-size:18px; }
+
+/* ===== Footer ===== */
+.footer{
+  text-align:center; padding:20px 12px;
+  color:#666; border-top:1px solid #eee; background:#fafafa;
+}
+/* === Fondo animado negro/rojo tipo destello (sin imagen) === */
+.hero{
+  /* mantiene el fix móvil que ya tienes */
+  position: relative;
+  height:auto !important;
+  min-height: calc(100svh - var(--header-h));
+  display:grid; place-items:center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+
+  /* degradado “mitad negro / mitad rojo” con barrido */
+  background:
+    linear-gradient(120deg,
+      #0f0f10 0%,
+      #0f0f10 45%,
+      #d62828 50%,
+      #0f0f10 55%,
+      #0f0f10 100%);
+  background-size: 200% 200%;
+
+  /* animación del destello */
+  animation: destello 6s ease-in-out infinite;
+}
+
+@keyframes destello{
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+
+/* si el overlay te oscurece mucho, bájale un poco la opacidad */
+.hero-overlay{
+  background: linear-gradient(to top, rgba(0,0,0,.25), rgba(0,0,0,.35));
+}

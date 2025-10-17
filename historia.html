@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Historia — Instituto Dionisio de Herrera</title>
+  <link rel="stylesheet" href="historia.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.jpg" alt="Instituto Dionisio de Herrera" class="logo-img">
+        <span class="logo-text">DIONISIO DE HERRERA</span>
+      </a>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        ☰ Menú
+      </button>
+    </div>
+
+    <!-- MENÚ (sin Galería) -->
+    <nav id="menu" class="menu" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="oferta.html">Oferta Académica</a></li>
+        <li><a href="perfil.html">Perfiles</a></li>
+        <li><a href="historia.html" aria-current="page">Historia</a></li>
+        <li><a href="actividades.html">Actividades</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO con slideshow -->
+  <section id="hero" class="hero" role="region" aria-label="Historia del Instituto">
+    <!-- capas de fondo para el crossfade -->
+    <div class="hero-bg hero-bg-a"></div>
+    <div class="hero-bg hero-bg-b"></div>
+
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Nuestra Historia</h1>
+      <p>Décadas formando líderes con valores, disciplina y excelencia académica.</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="main">
+    <section class="intro">
+      <h2>Origen y Misión</h2>
+      <p>
+        El Instituto Dionisio de Herrera nació con la visión de brindar educación integral
+        a nuestra comunidad. Con el paso de los años, hemos crecido en infraestructura y
+        programas, manteniendo el compromiso con la calidad académica y la formación humana.
+      </p>
+    </section>
+
+    <section class="timeline" aria-label="Línea del tiempo">
+      <h2>Hitos institucionales</h2>
+      <ol class="tl">
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Fundación</h3>
+            <p>Se crea el Instituto con un equipo docente comprometido y una primera generación de estudiantes.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Crecimiento</h3>
+            <p>Ampliación de aulas, laboratorios y áreas deportivas para atender a más familias.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Innovación</h3>
+            <p>Integración de tecnología educativa y proyectos STEAM en los distintos niveles.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Presente</h3>
+            <p>Compromiso con la excelencia académica y el liderazgo estudiantil al servicio de la comunidad.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Instituto Dionisio de Herrera</p>
+  </footer>
+
+  <script src="historia.js"></script>
+</body>
+</html>

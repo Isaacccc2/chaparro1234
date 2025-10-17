@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oferta Académica — Instituto Dionisio de Herrera</title>
+
+  <!-- Cambia aquí el nombre de tu imagen de portada si no es "hero-oferta.jpg" -->
+  <style>:root{ --hero-img: url('.jpg'); }</style>
+
+  <link rel="stylesheet" href="oferta.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.jpg" alt="Instituto Dionisio de Herrera" class="logo-img">
+        <span class="logo-text">DIONISIO DE HERRERA</span>
+      </a>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        ☰ Menú
+      </button>
+    </div>
+
+    <!-- MENÚ (sin Galería) -->
+    <nav id="menu" class="menu" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="oferta.html" aria-current="page">Oferta Académica</a></li>
+        <li><a href="perfil.html">Perfiles</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="actividades.html">Actividades</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" role="region" aria-label="Oferta Académica">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Oferta Académica</h1>
+      <p>Programas diseñados para potenciar tu futuro.</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="main">
+    <section class="programas">
+      <div class="grid">
+        <article class="card">
+          <h3>Tercer Ciclo de Educación Básica</h3>
+          <p>7º, 8º y 9º grado con fundamentos en ciencias, matemáticas y comunicación.</p>
+        </article>
+        <article class="card">
+          <h3>Bachillerato en Ciencias y Humanidades</h3>
+          <p>Formación integral con pensamiento crítico y preparación para la U.</p>
+        </article>
+        <article class="card">
+          <h3>Bachillerato Técnico en Contaduría y Finanzas</h3>
+          <p>Contabilidad, costos, finanzas y gestión administrativa.</p>
+        </article>
+        <article class="card">
+          <h3>Bachillerato Técnico en Informática</h3>
+          <p>Programación, redes, soporte y proyectos tecnológicos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Instituto Dionisio de Herrera</p>
+  </footer>
+
+  <script src="oferta.js"></script>
+</body>
+</html>

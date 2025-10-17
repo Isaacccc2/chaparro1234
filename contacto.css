@@ -1,0 +1,110 @@
+/* ===== Variables y base ===== */
+:root{
+  --header-h: 64px;
+  --brand: #e0664f;
+  --bg-dark: #0f0f10;
+  --text: #1f1f1f;
+}
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  color: var(--text);
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height: 1.5;
+}
+.no-scroll{ overflow: hidden; }
+
+/* ===== Header ===== */
+.header{
+  position: sticky; top:0; z-index:1000;
+  height: var(--header-h);
+  background: var(--bg-dark);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.header-inner{
+  height:100%; max-width:1100px; margin:0 auto; padding:0 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.logo{ display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none; }
+.logo-img{ width:36px; height:36px; object-fit:contain; border-radius:6px; }
+.logo-text{ font-weight:700; letter-spacing:.5px; font-size:14px; color:#fff; }
+.menu-btn{
+  border:0; border-radius:999px; padding:10px 16px;
+  background: var(--brand); color:#fff; font-weight:700; cursor:pointer;
+}
+
+/* ===== Menú móvil/desktop ===== */
+.menu{
+  position: fixed; inset: var(--header-h) 0 auto 0;
+  background:#121214; transform:translateY(-8px);
+  opacity:0; pointer-events:none; transition:.25s ease; z-index:999;
+  padding:12px 16px 24px;
+}
+.menu[aria-hidden="false"]{ transform:translateY(0); opacity:1; pointer-events:auto; }
+.menu ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.menu a{ display:block; padding:12px 10px; border-radius:10px; color:#fff; text-decoration:none; }
+.menu a:hover, .menu a[aria-current="page"]{ background:rgba(255,255,255,.08); }
+@media (min-width: 900px){
+  .menu{ position: static; inset:auto; background:transparent; transform:none; opacity:1; pointer-events:auto; padding:0; }
+  .menu ul{ display:flex; gap:6px; }
+  .menu a{ padding:10px 12px; }
+  .menu-btn{ display:none; }
+}
+
+/* ===== HERO (sin pantalla negra móvil) ===== */
+.hero{
+  position: relative;
+  height:auto !important;
+  min-height: calc(100svh - var(--header-h));
+  display:grid; place-items:center;
+  padding: 24px 16px;
+  background: radial-gradient(90% 120% at 10% 10%, #7a1411, #1a0f0f 60%),
+              linear-gradient(180deg, #ba2f26, #5a0d0b);
+  box-sizing:border-box; overflow:hidden;
+}
+@supports not (height: 100svh){
+  .hero{ min-height: calc(var(--vh, 1vh) * 100 - var(--header-h)); }
+}
+.hero-overlay{ position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.25), rgba(0,0,0,.35)); pointer-events:none; z-index:1; }
+.hero-content{ position:relative; z-index:2; text-align:center; color:#fff; max-width:900px; }
+.hero-content h1{ margin:0 0 8px; font-size: clamp(26px, 6vw, 40px); }
+.hero-content p{ margin:0; font-size: clamp(14px, 3.8vw, 18px); opacity:.95; }
+
+/* ===== Main ===== */
+.main{ max-width:1100px; margin:32px auto; padding:0 16px; display:grid; gap:16px; }
+.info{ display:grid; gap:16px; grid-template-columns:1fr; }
+@media(min-width:900px){ .info{ grid-template-columns: 1fr 1fr; } }
+
+.card{
+  background:#fff; border:1px solid #eee; border-radius:14px; padding:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.04);
+}
+.card h2{ margin:0 0 8px; font-size: clamp(20px, 4.5vw, 26px); }
+.list{ margin:8px 0 0; padding-left:18px; }
+.list a{ color:#0b6bcb; text-decoration:none; }
+.list a:hover{ text-decoration:underline; }
+
+.form{ display:grid; gap:10px; }
+.form .row{ display:grid; gap:10px; grid-template-columns:1fr; }
+@media(min-width:600px){ .form .row{ grid-template-columns: 1fr 1fr; } }
+.form input, .form textarea{
+  width:100%; border:1px solid #e5e7eb; border-radius:10px;
+  padding:10px 12px; font: inherit;
+}
+.btn{
+  padding:10px 14px; border-radius:10px; border:1px solid #e5e7eb;
+  background:#fff; font-weight:700; cursor:pointer;
+}
+.btn:hover{ border-color: var(--brand); box-shadow:0 0 0 3px rgba(224,102,79,.18); }
+.help{ color:#666; font-size:12px; margin-top:6px; }
+
+/* ===== Mapa ===== */
+.mapa h2{ font-size: clamp(20px, 4.5vw, 26px); margin:16px 0 8px; }
+.map-note{ color:#666; font-size:14px; margin-top:8px; }
+
+/* ===== Footer ===== */
+.footer{
+  text-align:center; padding:20px 12px;
+  color:#666; border-top:1px solid #eee; background:#fafafa;
+}

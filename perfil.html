@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfiles — Instituto Dionisio de Herrera</title>
+
+  <!-- Cambia aquí el nombre de TU imagen de portada si no es "hero-perfiles.jpg" -->
+  <style>:root{ --hero-img: url('perfiles.jpg'); }</style>
+
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="logo2.jpg" alt="Instituto Dionisio de Herrera" class="logo-img">
+        <span class="logo-text">DIONISIO DE HERRERA</span>
+      </a>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        ☰ Menú
+      </button>
+    </div>
+
+    <!-- MENÚ (sin Galería) -->
+    <nav id="menu" class="menu" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="oferta.html">Oferta Académica</a></li>
+        <li><a href="perfil.html" aria-current="page">Perfiles</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="actividades.html">Actividades</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <!-- HERO -->
+  <section id="hero" class="hero" role="region" aria-label="Perfiles por carrera">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Perfiles</h1>
+      <p>Desde 7º a Bachillerato: competencias, áreas y proyección.</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+ 
+   <section class="grid" id="profilesGrid">
+  <!-- Tercer Ciclo -->
+  <article class="card profile-card" data-level="tercer-ciclo" data-career="tercer-ciclo">
+    <div class="thumb-wrap">
+      <img class="thumb" src="ciclo.jpg" alt="Estudiantes del Tercer Ciclo" loading="lazy">
+    </div>
+    <h3>Tercer Ciclo (7º, 8º y 9º)</h3>
+    <p>Base en matemáticas, ciencias, comunicación y ciudadanía.</p>
+    <span class="badge">Nivel: Tercer Ciclo</span>
+  </article>
+
+  <!-- Ciencias y Humanidades -->
+  <article class="card profile-card" data-level="bachillerato" data-career="ciencias">
+    <div class="thumb-wrap">
+      <img class="thumb" src="bch1.jpg" alt="Bachillerato en Ciencias y Humanidades" loading="lazy">
+    </div>
+    <h3>Bachillerato en Ciencias y Humanidades</h3>
+    <p>Pensamiento crítico, investigación y expresión académica.</p>
+    <span class="badge">Carrera: CyH</span>
+  </article>
+
+  <!-- Contaduría y Finanzas -->
+  <article class="card profile-card" data-level="bachillerato" data-career="conta">
+    <div class="thumb-wrap">
+      <img class="thumb" src="conta1.jpg" alt="Bachillerato Técnico en Contaduría y Finanzas" loading="lazy">
+    </div>
+    <h3>Bachillerato Técnico en Contaduría y Finanzas</h3>
+    <p>Contabilidad, costos, finanzas y gestión administrativa.</p>
+    <span class="badge">Carrera: Contaduría</span>
+  </article>
+
+  <!-- Informática -->
+  <article class="card profile-card" data-level="bachillerato" data-career="info">
+    <div class="thumb-wrap">
+      <img class="thumb" src="info1.jpg" alt="Bachillerato Técnico en Informática" loading="lazy">
+    </div>
+    <h3>Bachillerato Técnico en Informática</h3>
+    <p>Programación, redes, soporte y proyectos tecnológicos.</p>
+    <span class="badge">Carrera: Informática</span>
+  </article>
+
+
+</section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Instituto Dionisio de Herrera</p>
+  </footer>
+
+<script>
+ // Altura móvil correcta (quita franjas en teléfonos)
+(function(){ function apply(){ document.documentElement.style.setProperty('--vh',(window.innerHeight*0.01)+'px'); }
+apply(); window.addEventListener('resize', apply); })();
+
+// Menú móvil
+(function(){
+  const btn=document.getElementById('menuBtn'), menu=document.getElementById('menu');
+  if(!btn||!menu) return;
+  const toggle=()=>{ const open=btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded',String(!open));
+    menu.setAttribute('aria-hidden',String(open));
+    document.body.classList.toggle('no-scroll',!open);
+  };
+  btn.addEventListener('click', toggle);
+  menu.addEventListener('click', e=>{ if(e.target.tagName==='A'){ btn.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); document.body.classList.remove('no-scroll'); }});
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ btn.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true'); document.body.classList.remove('no-scroll'); }});
+  const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

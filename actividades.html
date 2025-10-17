@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Actividades — Instituto Dionisio de Herrera</title>
+  <link rel="stylesheet" href="actividades.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.jpg" alt="Instituto Dionisio de Herrera" class="logo-img">
+        <span class="logo-text">DIONISIO DE HERRERA</span>
+      </a>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰ Menú</button>
+    </div>
+    <nav id="menu" class="menu" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="oferta.html">Oferta Académica</a></li>
+        <li><a href="perfil.html">Perfiles</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="actividades.html" aria-current="page">Actividades</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" aria-label="Creatividad y Aprendizaje">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Actividades Extracurriculares</h1>
+      <p>Creatividad, convivencia y aprendizaje.</p>
+    </div>
+  </section>
+
+  <!-- TARJETAS (flip 3D) -->
+  <main class="main">
+    <section class="cards" aria-label="Tarjetas de actividades">
+      <div class="grid" id="cardsGrid">
+        <!-- Sombrero -->
+        <article class="flip-card" tabindex="0" aria-label="Concurso de Sombrero Loco. Tocar para ver detalles.">
+          <div class="flip-inner">
+            <div class="flip-front"><h3>Concurso de Sombrero<br>Loco</h3></div>
+            <div class="flip-back">
+              <img src="sombrero.jpg" alt="Concurso de Sombrero Loco" loading="lazy">
+              <p>Premios a la originalidad y reciclaje.</p>
+              <span class="tag">Cultura y Recreación</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Color Day -->
+        <article class="flip-card" tabindex="0" aria-label="Color Day. Tocar para ver detalles.">
+          <div class="flip-inner">
+            <div class="flip-front"><h3>Color Day</h3></div>
+            <div class="flip-back">
+              <img src="colo.jpg" alt="Color Day" loading="lazy">
+              <p>Ropa casual. Aporte para proyectos estudiantiles.</p>
+              <span class="tag">Convivencia</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pijama -->
+        <article class="flip-card" tabindex="0" aria-label="Día de Pijama. Tocar para ver detalles.">
+          <div class="flip-inner">
+            <div class="flip-front"><h3>Día de Pijama</h3></div>
+            <div class="flip-back">
+              <img src="pijama.jpg" alt="Día de Pijama" loading="lazy">
+              <p>Estilos cómodos y creativos. Jornada divertida.</p>
+              <span class="tag">Convivencia</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Movie Day -->
+        <article class="flip-card" tabindex="0" aria-label="Movie Day. Tocar para ver detalles.">
+          <div class="flip-inner">
+            <div class="flip-front"><h3>Movie Day</h3></div>
+            <div class="flip-back">
+              <img src="movie.jpg" alt="Movie Day" loading="lazy">
+              <p>Proyección con reflexión guiada.</p>
+              <span class="tag">Cine-Foro</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Calcetines Locos -->
+        <article class="flip-card" tabindex="0" aria-label="Día de Calcetines Locos. Tocar para ver detalles.">
+          <div class="flip-inner">
+            <div class="flip-front"><h3>Día de Calcetines<br>Locos</h3></div>
+            <div class="flip-back">
+              <img src="cal.jpg" alt="Día de Calcetines Locos" loading="lazy">
+              <p>Combina colores y patrones fuera de serie.</p>
+              <span class="tag">Cultura y Recreación</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Imagen de actividad">
+    <img id="lightboxImg" alt="">
+    <button class="lightbox-close" aria-label="Cerrar">×</button>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Instituto Dionisio de Herrera</p>
+  </footer>
+
+  <script src="actividades.js"></script>
+</body>
+</html>

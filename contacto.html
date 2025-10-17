@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto — Instituto Dionisio de Herrera</title>
+
+  <!-- ====== ESTILOS ====== -->
+  <style>
+    :root{
+      --bg:#0b0b0b;            /* fondo global oscuro detrás del héroe */
+      --grad1:#150306;         /* rojo oscuro superior */
+      --grad2:#0a0a0a;         /* negro inferior */
+      --page:#f6f8fb;          /* fondo de página bajo el héroe */
+      --card:#ffffff;          /* tarjetas */
+      --text:#111827;          /* texto principal */
+      --muted:#6b7280;
+      --link:#2563eb;
+      --ring:#e5e7eb;
+      --red:#e11d48;           /* acento */
+      --red-700:#b51238;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+    /* ====== NAVBAR BÁSICO ====== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:#0f0f10ee; backdrop-filter:saturate(1.2) blur(6px);
+      border-bottom:1px solid #1f2937;
+    }
+    .nav-inner{
+      max-width:1100px;margin:auto;display:flex;align-items:center;gap:18px;
+      padding:10px 16px;color:#e5e7eb;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .brand img{width:28px;height:28px;border-radius:8px;display:block}
+    .menu{display:flex;gap:16px;margin-left:auto}
+    .menu a{
+      color:#e5e7eb;text-decoration:none;padding:8px 10px;border-radius:12px;font-weight:600
+    }
+    .menu a.active{background:#3f3f46}
+
+    /* ====== HERO ====== */
+    .hero{
+      background: radial-gradient(1200px 420px at 20% -10%, #3b0d15 0%, transparent 60%),
+                  linear-gradient(180deg,var(--grad1) 0%, var(--grad2) 100%);
+      color:#fff; text-align:center; padding:72px 16px 84px;
+    }
+    .hero h1{margin:0 0 8px 0; font-size: clamp(28px, 4vw, 44px)}
+    .hero p{margin:0; opacity:.85}
+
+    /* ====== CONTENIDO ====== */
+    .page{
+      background:var(--page);
+      border-top-left-radius:28px;border-top-right-radius:28px;
+      margin-top:-28px;
+      padding:28px 0 50px 0;
+    }
+    .wrap{max-width:1100px;margin:auto;padding:0 16px}
+
+    .grid{display:grid;gap:22px}
+    @media (min-width: 920px){ .grid-2{grid-template-columns: 1fr 1fr} }
+
+    .card{
+      background:var(--card); border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      border:1px solid #eef2f7; padding:22px;
+    }
+    h2{margin:0 0 14px 0; font-size: clamp(22px,2.5vw,26px)}
+    ul{margin:0;padding-left:18px}
+    li{margin:8px 0}
+    a{color:var(--link)}
+    .muted{color:var(--muted)}
+
+    /* ====== FORM ====== */
+    label{display:block;font-weight:700;margin-bottom:6px}
+    input, textarea{
+      width:100%; background:#fff; border:1px solid var(--ring);
+      border-radius:12px; padding:12px 14px; font-size:16px; outline:none;
+      transition:border-color .2s, box-shadow .2s;
+    }
+    input:focus, textarea:focus{border-color:var(--red);box-shadow:0 0 0 4px rgba(225,29,72,.12)}
+    textarea{min-height:150px;resize:vertical}
+    .grid-mini{display:grid;gap:14px}
+    @media (min-width:700px){ .grid-mini{grid-template-columns:1fr 1fr} }
+    .row{margin-top:12px}
+    .footnote{font-size:12px;color:var(--muted);margin-top:6px}
+
+    .actions{margin-top:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    button{
+      border:0;background:var(--red);color:#fff;font-weight:800;letter-spacing:.2px;
+      padding:12px 18px;border-radius:999px;cursor:pointer
+    }
+    button:disabled{opacity:.7;cursor:not-allowed}
+    .ghost{background:#111827;color:#fff}
+    .ok{color:#047857;font-weight:700}
+    .err{color:#b91c1c;font-weight:700}
+
+    /* honeypot oculto */
+    .hp{position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden}
+
+    /* ====== MAPA ====== */
+    .map a img{width:100%;height:auto;display:block;border-radius:16px}
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="logo.jpg" alt="Logo">
+        <span>DIONISIO DE HERRERA</span>
+      </div>
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="oferta.html">Oferta Académica</a>
+        <a href="perfiles.html">Perfiles</a>
+        <a href="historia.html">Historia</a>
+        <a href="actividades.html">Actividades</a>
+        <a class="active" href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <h1>Contacto</h1>
+    <p>Estamos para ayudarte. Escríbenos o visítanos en el instituto.</p>
+  </header>
+
+  <!-- ===== CUERPO ===== -->
+  <main class="page">
+    <div class="wrap grid grid-2">
+
+      <!-- Columna izquierda: Datos -->
+      <section class="card">
+        <h2>Datos de contacto</h2>
+        <ul>
+          <li><strong>Dirección:</strong> Esta ubicado en el Barrio Abajo, Tegucigalpa, frente al parque Herrera Contiguo a la Iglesia el Calvario.</li>
+          <li><strong>Teléfono:</strong> <a href="tel:+50433901979">+504 3390-1979</a></li>
+          <li><strong>Correo:</strong> <a id="mailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=educacionmedia011@gmail.com&su=Consulta&body=Hola%2C%20...">educacionmedia011@gmail.com</a></li>
+          <li><strong>Horario:</strong> Lunes a Viernes, 8:00 a.m. – 3:00 p.m.</li>
+        </ul>
+      </section>
+
+      <!-- Columna derecha: Formulario -->
+      <section class="card">
+        <h2>Envíanos un mensaje</h2>
+
+        <form id="contactForm" autocomplete="on">
+          <div class="grid-mini">
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+            </div>
+            <div>
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="subject">Asunto</label>
+            <input id="subject" name="subject" type="text" placeholder="Motivo del mensaje" required />
+          </div>
+
+          <div class="row">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Escribe tu mensaje..." required></textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <input class="hp" type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+
+          <div class="actions">
+            <button id="sendBtn" type="submit">Enviar</button>
+            <a id="mailtoBackup" class="ghost" href="#">Abrir en correo</a>
+            <span id="status" class="footnote"></span>
+          </div>
+
+          
+        </form>
+      </section>
+    </div>
+
+    <!-- Ubicación -->
+    <div class="wrap" style="margin-top:22px">
+      <h2>Ubicación</h2>
+      <div class="card">
+        <div class="map">
+          <a href="https://maps.app.goo.gl/5n1TH4jSk6r3T9AJA" target="_blank" rel="noopener">
+            <picture>
+              <source srcset="mapa-ubicacion.webp" type="image/webp">
+              <img
+                src="mapa-ubicacion.jpg"
+                alt="Mapa — CEMNG Dionisio de Herrera"
+                loading="lazy"
+                onerror="this.onerror=null; this.src='mapa-ubicacion.jpg';"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== SCRIPTS ===== -->
+
+  <!-- EmailJS (opcional para envío automático sin backend) -->
+ <!-- SIN EmailJS: solo Gmail Compose -->
+<script>
+  // Correo del instituto
+  const INSTITUTO_EMAIL = "educacionmedia011@gmail.com";
+
+  // Enlace de la tarjeta izquierda (Correo:)
+  const mailLink = document.getElementById("mailLink");
+  if (mailLink) {
+    // Si prefieres SOLO mailto, usa: mailLink.href = "mailto:" + INSTITUTO_EMAIL;
+    const defaultSubject = encodeURIComponent("Consulta");
+    const defaultBody    = encodeURIComponent("Hola, ...");
+    mailLink.textContent = INSTITUTO_EMAIL;
+    mailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(INSTITUTO_EMAIL)}&su=${defaultSubject}&body=${defaultBody}&tf=1`;
+    mailLink.target = "_blank";
+    mailLink.rel = "noopener";
+  }
+
+  // Referencias del formulario
+  const form         = document.getElementById("contactForm");
+  const sendBtn      = document.getElementById("sendBtn");
+  const statusEl     = document.getElementById("status");
+  const mailtoBackup = document.getElementById("mailtoBackup");
+
+  // Construye la URL de Gmail Compose con los datos del formulario
+  function buildGmailComposeURL() {
+    const name    = encodeURIComponent(document.getElementById("name").value || "");
+    const email   = encodeURIComponent(document.getElementById("email").value || "");
+    const subject = encodeURIComponent(document.getElementById("subject").value || "Consulta");
+    const message = encodeURIComponent(document.getElementById("message").value || "Hola, ...");
+
+    const body =
+      `Nombre: ${name}%0D%0A` +
+      `Correo: ${email}%0D%0A%0D%0A` +
+      `Mensaje:%0D%0A${message}`;
+
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(INSTITUTO_EMAIL)}&su=${subject}&body=${body}&tf=1`;
+  }
+
+  // Botón “Abrir en correo”
+  function updateComposeLink() {
+    if (mailtoBackup) mailtoBackup.href = buildGmailComposeURL();
+  }
+  ["name","email","subject","message"].forEach(id=>{
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("input", updateComposeLink);
+  });
+  updateComposeLink();
+
+  // Enviar = abrir Gmail Compose
+  form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    // Honeypot anti-bots
+    if (document.getElementById("website")?.value.trim()) {
+      statusEl.textContent = "Detectamos actividad sospechosa."; statusEl.className = "err"; return;
+    }
+    sendBtn.disabled = true;
+    statusEl.textContent = "Abriendo Gmail…"; statusEl.className = "ok";
+    window.open(buildGmailComposeURL(), "_blank");
+    sendBtn.disabled = false;
+  });
+</script>
+
+/body>
+</html>
